@@ -1,0 +1,53 @@
+<div class="container-bg">
+    <mat-grid-list cols="4" rowHeight="320px">
+      <mat-grid-tile colspan="4" rowspan="1"></mat-grid-tile>
+      <mat-grid-tile colspan="1" ></mat-grid-tile>
+      <mat-grid-tile colspan="2">
+        <div class="container">
+          <!-- formulario -->
+          <form [formGroup]="formularioCadastro" novalidate>
+            <div class="child">
+              <mat-form-field class="full-width" appearance="fill">
+                <mat-label>E-mail</mat-label>
+                <input matInput placeholder="meuemail@email.com" formControlName="email" autocomplete="off">
+              </mat-form-field>
+            </div>
+            <div class="child">
+              <mat-form-field class="full-width" appearance="fill">
+                <mat-label>Senha</mat-label>
+                <input matInput type="password" formControlName="senha">
+              </mat-form-field>
+            </div>
+            <div class="child">
+              <mat-form-field class="full-width" appearance="fill">
+                <mat-label>Nome</mat-label>
+                <input matInput formControlName="nome" autocomplete="off">
+              </mat-form-field>
+            </div>
+            <div class="child">
+              <mat-form-field class="full-width" appearance="fill">
+                <mat-label>Telefone</mat-label>
+                <input matInput formControlName="telefone" appTelefone>
+              </mat-form-field>
+            </div>
+            <div class="child">
+              <button mat-raised-button color="primary" class="btn-cancelar" (click)="onCancelar()">Cancelar</button>
+              <button mat-raised-button color="primary" class="btn-entrar" (click)="onSalvar()" [disabled]="formularioCadastro.invalid">Salvar</button>
+            </div>
+            <div class="child">
+              <div class="left">
+                <a routerLink="/login">Entrar</a>
+              </div>
+              <div class="right">
+                <a routerLink="recuperar">recuperar senha</a>
+              </div>
+            </div>
+          </form>
+          <!-- formulario -->
+        </div>
+      </mat-grid-tile>
+      <mat-grid-tile colspan="1" ></mat-grid-tile>
+      <mat-grid-tile colspan="4" rowspan="1" ></mat-grid-tile>
+    </mat-grid-list>
+  </div>
+
